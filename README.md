@@ -20,6 +20,7 @@ end
 ```
 
 ## TODOs
-[ ] refactor project
-[ ] add config file support
+
+- [ ] refactor project
+- [ ] add config file support
  
