@@ -20,7 +20,10 @@
 #  name = "github.com/x/y"
 #  version = "2.4.0"
 
+[[constraint]]
+  name = "gopkg.in/src-d/go-git.v4"
+  version = "~v4.10.0"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/k0kubun/go-ansi"
+  name = "github.com/mitchellh/go-ps"
+  revision = "4fdf99ab29366514c69ccccddab5dc58b8d84062"
