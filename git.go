@@ -32,9 +32,10 @@ func getCommits(wd string) gitStats {
 		return stats
 	}
 	const day = 24 * time.Hour
+	const historyDeptthInDays = 7
 	var now = time.Now().Round(day)
-	var fromDate = now.Add(-7 * day)
-	var commitStats = make([]int, 7)
+	var fromDate = now.Add(-historyDeptthInDays * day).Round(day)
+	var commitStats = make([]int, historyDeptthInDays+1)
 	for {
 		var commit, errNextCommit = gitLog.Next()
 		if errNextCommit != nil {
@@ -44,8 +45,7 @@ func getCommits(wd string) gitStats {
 		if commitDate.Before(fromDate) {
 			break
 		}
-		var delta = math.Abs(commitDate.Sub(fromDate).Hours() / 24)
-		var day = int(delta)
+		var day = int(commitDate.Sub(fromDate) / day)
 		commitStats[day]++
 	}
 	stats.CommitStats = commitStats
