@@ -41,6 +41,14 @@
   version = "v1.1.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:1dee6133ab829c8559a39031ad1e0e3538e4a7b34d3e0509d1fc247737e928c1"
+  name = "github.com/mitchellh/go-ps"
+  packages = ["."]
+  pruneopts = ""
+  revision = "4fdf99ab29366514c69ccccddab5dc58b8d84062"
+
+[[projects]]
   digest = "1:049b5bee78dfdc9628ee0e557219c41f683e5b06c5a5f20eaba0105ccc586689"
   name = "github.com/pelletier/go-buffruneio"
   packages = ["."]
@@ -197,6 +205,9 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["gopkg.in/src-d/go-git.v4"]
+  input-imports = [
+    "github.com/mitchellh/go-ps",
+    "gopkg.in/src-d/go-git.v4",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
